@@ -110,3 +110,13 @@ micro-ros-olimex-nuttx |
 
 Apart from GitHub repositories changes, a build could be triggered whenever the base image is updated on Docker Hub.
 Base images are specified in the FROM: directive in the Dockerfile.
+
+## Using micro-ros-olimex-nuttx	to flash Olimex board
+
+```
+sudo docker build -t microros/base:crystal base/
+sudo docker build -t microros/firmware:crystal firmware/
+sudo docker build -t microros/micromicro-ros-olimex-nuttx:crystal micro-ROS-Olimex-NuttX/
+sudo docker run --privileged -it -v /dev:/dev  microros/micromicro-ros-olimex-nuttx:crystal
+```
+
